@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1> Country List </h1>
+
+{% if user.is_authenticated %}
+<a href="/createcountry/"><h3>Add New Country</h3></a>
+{% endif %}
+
+{% for country in country_list %}
+
+<a href="/country/{{ country.pk }}/">{{country.name}}</a>
+<br>
+
+
+
+{% endfor %}
+
+{%  endblock %}
